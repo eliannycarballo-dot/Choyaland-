@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Choyaland</title>
+
+<style>
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(#f4f1e8, #e8e0cf);
+}
+
+header{
+    background:#5a3e2b;
+    color:white;
+    text-align:center;
+    padding:30px;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.container{
+    padding:20px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    padding:15px;
+    margin-bottom:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.price{
+    color:#2e7d32;
+    font-weight:bold;
+}
+
+.button{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    background:#2e7d32;
+    color:white;
+    border:none;
+    border-radius:8px;
+}
+
+.form{
+    display:none;
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    margin-top:20px;
+}
+
+input, select{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+</style>
+
+<script>
+function seleccionar(paquete){
+    document.getElementById("formulario").style.display="block";
+    document.getElementById("paquete").value = paquete;
+    window.scrollTo(0,document.body.scrollHeight);
+}
+
+function confirmarCompra(){
+    alert("✅ Compra realizada con éxito\nPaquete: " + document.getElementById("paquete").value);
+}
+</script>
+
+</head>
+
+<body>
+
+<header>Choyaland 🌿</header>
+
+<div class="container">
+
+<div class="card">
+<b>Básico</b><br>
+Acceso al parque y 2 actividades<br>
+<span class="price">$150</span>
+<button class="button" onclick="seleccionar('Básico')">Seleccionar</button>
+</div>
+
+<div class="card">
+<b>Aventura</b><br>
+Acceso al parque y 4 actividades<br>
+<span class="price">$250</span>
+<button class="button" onclick="seleccionar('Aventura')">Seleccionar</button>
+</div>
+
+<div class="card">
+<b>Grupal</b><br>
+Para grupos de 5 personas o más<br>
+<span class="price">$200 c/u</span>
+<button class="button" onclick="seleccionar('Grupal')">Seleccionar</button>
+</div>
+
+<div class="card">
+<b>Familiar</b><br>
+2 adultos + 2 niños<br>
+<span class="price">$700</span>
+<button class="button" onclick="seleccionar('Familiar')">Seleccionar</button>
+</div>
+
+<div class="card">
+<b>VIP</b><br>
+Experiencia completa + guía<br>
+<span class="price">$400</span>
+<button class="button" onclick="seleccionar('VIP')">Seleccionar</button>
+</div>
+
+<div class="card">
+<b>Niños</b><br>
+Menores de 12 años<br>
+<span class="price">$120</span>
+<button class="button" onclick="seleccionar('Niños')">Seleccionar</button>
+</div>
+
+<div class="form" id="formulario">
+<h3>🎟 Completa tu compra</h3>
+
+<label>Nombre</label>
+<input type="text">
+
+<label>Correo</label>
+<input type="email">
+
+<label>Paquete seleccionado</label>
+<input type="text" id="paquete" readonly>
+
+<label>Cantidad</label>
+<input type="number">
+
+<label>Fecha</label>
+<input type="date">
+
+<label>Método de pago</label>
+<select>
+<option>Tarjeta</option>
+<option>OXXO</option>
+<option>Transferencia</option>
+</select>
+
+<button class="button" onclick="confirmarCompra()">Confirmar compra</button>
+</div>
+
+</div>
+
+</body>
+</html>
